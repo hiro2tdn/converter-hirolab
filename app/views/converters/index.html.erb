@@ -3,7 +3,8 @@
 <%= submit_tag 'Decode' , name: "decode_button"-%>
 <%= submit_tag 'Encode' , name: "encode_button"-%>
 <br />
-<% @initial_value = 'http://' %>
+<% @initial_value = 'http://あ
+http://%E3%81%82' %>
 <%= text_area_tag 'input_value', @initial_value, :size => '100x10' %>
 <br />
 <% end %>

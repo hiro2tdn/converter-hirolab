@@ -1,5 +1,5 @@
 try {
-    $('#result_value').html('<%= simple_format(hbr(@result_value, @decode)) %>');
+    $('#result_value').html('<%= simple_format(hbr(@result_value)) %>');
 } catch(e){
 	$('#result_value').html('js error');
 }

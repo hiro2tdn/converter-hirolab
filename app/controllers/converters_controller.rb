@@ -1,15 +1,18 @@
 class ConvertersController < ApplicationController
   require 'uri'
   def index
-    begin
-      @decode = params[:decode_button]
-      if params[:decode_button]
-        @result_value = URI.unescape(params[:input_value])
-      else
-        @result_value = URI.escape(params[:input_value])
+    if(params[:input_value])
+      lines = []
+      params[:input_value].each_line do |line|
+        line = line.chomp
+        if params[:decode_button]
+          line = URI.unescape(line)
+        else
+          line = URI.escape(line)
+        end
+        lines.push(line)
       end
-    rescue => e
-      @result_value = 'controller error'
+      @result_value = lines.join("\n");
     end
     render
   end
