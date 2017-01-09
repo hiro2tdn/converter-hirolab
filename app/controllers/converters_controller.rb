@@ -2,9 +2,14 @@ class ConvertersController < ApplicationController
   require 'uri'
   def index
     begin
-      @input_value = URI.unescape(params[:input_value])
+      @decode = params[:decode_button]
+      if params[:decode_button]
+        @result_value = URI.unescape(params[:input_value])
+      else
+        @result_value = URI.escape(params[:input_value])
+      end
     rescue => e
-      @input_value = 'controller error'
+      @result_value = 'controller error'
     end
     render
   end

@@ -1,6 +1,10 @@
 module ConvertersHelper
-  def hbr(s)
+  def hbr(s, decode)
     s = h(s)
-    s.gsub(/\r\n|\r|\n/, "<br />")
+    if(decode)
+      s.gsub(/\r\n|\r|\n/, "<br />")
+    else
+      s.gsub("%0D%0A", "<br />")
+    end
   end
 end
