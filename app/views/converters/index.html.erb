@@ -1,11 +1,18 @@
-<h1>URL Decoder/Encoder</h1>
-<%= form_tag(url_for(:action => 'index'), :remote => true, :id => 'convert_form') do -%>
-<%= submit_tag 'Decode' , name: "decode_button"-%>
-<%= submit_tag 'Encode' , name: "encode_button"-%>
-<br />
 <% @initial_value = 'http://あ
 http://%E3%81%82' %>
-<%= text_area_tag 'input_value', @initial_value, :size => '100x10' %>
-<br />
-<% end %>
-<div id='result_value' />
+
+<div class="container">
+	<div class="page-header">
+		<h1>URL Decoder/Encoder</h1>
+	</div>
+	<%= form_tag(url_for(:action => "index"), :remote => true) do %>
+		<label for="input_value">Input:</label>
+		<%= text_area_tag "input_value", @initial_value , :class => "form-control", :size => "10x8" %>
+		<br />
+		<%= submit_tag "Decode", :name => "decode_button", :class => "btn btn-primary" %>
+		<%= submit_tag "Encode", :name => "encode_button", :class => "btn btn-primary" %>
+	<% end %>
+	<br />
+	<label for="result_value">Result:</label>
+	<div id="result_value" class="form-control" style="height:180px;" />
+</div>
