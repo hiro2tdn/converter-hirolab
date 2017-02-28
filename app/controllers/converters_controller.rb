@@ -5,10 +5,12 @@ class ConvertersController < ApplicationController
       lines = []
       params[:input_value].each_line do |line|
         line = line.chomp
-        if params[:decode_button]
+        if params[:decode_button] then
           line = URI.unescape(line)
-        else
+        elsif params[:encode_button] then
           line = URI.escape(line)
+        elsif params[:replace_button] then
+          line = line.gsub(/\\/, "/")
         end
         lines.push(line)
       end
