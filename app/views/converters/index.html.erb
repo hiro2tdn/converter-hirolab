@@ -2,29 +2,29 @@
 http://あ
 C:\tmp\data' %>
 <div class="container">
-	<div class="page-header">
-		<h1>Converter</h1>
-	</div>
-	<%= form_tag(url_for(:action => 'index'), :remote => true) do %>
-	<div style="margin-bottom:10px">
-		<div style="text-align:left;float:left;">
-			<%= submit_tag 'URL Decode', :name => 'decode_button', :class => 'btn btn-primary' %>
-			<%= submit_tag 'URL Encode', :name => 'encode_button', :class => 'btn btn-primary' %>
-			<%= submit_tag 'Replace \ with /', :name => 'replace_button', :class => 'btn btn-primary' %>
-		</div>
-		<div style="text-align:right;">
-			<button type="button" class="btn btn-primary clipboard-btn" data-clipboard-target="#result_value">Copy to clipboard</button>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6" style="margin-bottom:10px">
-			<label for="input_value">Input</label>
-			<%= text_area_tag 'input_value', @initial_value, :class => 'form-control', :size => '10x6' %>
-		</div>
-		<div class="col-md-6" style="margin-bottom:10px">
-			<label for="result_value">Result</label>
-			<div id="result_value" class="form-control" style="height:135px;" />
-		</div>
-	</div>
-	<% end %>
+  <div class="page-header">
+    <h1>Converter</h1>
+  </div>
+  <%= form_tag(url_for(:action => 'index'), :remote => true) do %>
+  <div style="margin-bottom:10px">
+    <div style="text-align:left;float:left;">
+      <%= submit_tag 'URL Decode', :name => 'decode_button', :class => 'btn btn-primary' %>
+      <%= submit_tag 'URL Encode', :name => 'encode_button', :class => 'btn btn-primary' %>
+      <%= submit_tag 'Replace \ with /', :name => 'replace_button', :class => 'btn btn-primary' %>
+    </div>
+    <div style="text-align:right;">
+      <button type="button" class="btn btn-primary clipboard-btn" data-clipboard-target="#result_value">Copy to clipboard</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6" style="margin-bottom:10px">
+      <label for="input_value">Input</label>
+      <%= text_area_tag 'input_value', @initial_value, :class => 'form-control', :size => '10x6', :style => 'resize:none' %>
+    </div>
+    <div class="col-md-6" style="margin-bottom:10px">
+      <label for="result_value">Result</label>
+      <div id="result_value" class="form-control" style="height:135px;word-break:break-all;" />
+    </div>
+  </div>
+  <% end %>
 </div>
