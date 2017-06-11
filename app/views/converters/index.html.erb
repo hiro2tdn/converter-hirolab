@@ -7,9 +7,14 @@ C:\tmp\data' %>
 	</div>
 	<%= form_tag(url_for(:action => 'index'), :remote => true) do %>
 	<div style="margin-bottom:10px">
-		<%= submit_tag 'URL Decode', :name => 'decode_button', :class => 'btn btn-primary' %>
-		<%= submit_tag 'URL Encode', :name => 'encode_button', :class => 'btn btn-primary' %>
-		<%= submit_tag 'Replace \ with /', :name => 'replace_button', :class => 'btn btn-primary' %>
+		<div style="text-align:left;float:left;">
+			<%= submit_tag 'URL Decode', :name => 'decode_button', :class => 'btn btn-primary' %>
+			<%= submit_tag 'URL Encode', :name => 'encode_button', :class => 'btn btn-primary' %>
+			<%= submit_tag 'Replace \ with /', :name => 'replace_button', :class => 'btn btn-primary' %>
+		</div>
+		<div style="text-align:right;">
+			<button type="button" class="btn btn-primary clipboard-btn" data-clipboard-target="#result_value">Copy to clipboard</button>
+		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-6" style="margin-bottom:10px">
