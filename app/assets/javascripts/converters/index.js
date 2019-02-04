@@ -1,4 +1,4 @@
-$(document).ready(function() {
+window.addEventListener('DOMContentLoaded', function() {
   var clipboard = new Clipboard('.clipboard-btn');
 
   clipboard.on('success', function(e) {

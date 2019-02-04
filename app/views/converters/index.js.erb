@@ -1,5 +1,7 @@
+var result_value;
 try {
-  $('#result_value').html('<%= simple_format(hbr(@result_value)) %>');
+  result_value = '<%= simple_format(hbr(@result_value)) %>';
 } catch(e){
-  $('#result_value').html('javascript error');
+  result_value = 'javascript error';
 }
+document.getElementById('result_value').innerHTML = result_value;
